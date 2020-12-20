@@ -1,14 +1,18 @@
 <template>
   <div>
     <h2>v-text</h2>
+    <!-- 替换子元素所有内容 -->
     <div v-text="'hello vue'">hello world</div>
     <h2>v-html</h2>
+    <!-- 替换内容为html -->
     <div v-html="'<span style=&quot;color: red&quot;>hello vue</span>'">
       hello world
     </div>
     <h2>v-show</h2>
+    <!-- 是否显示 -->
     <div v-show="show">hello vue</div>
     <button @click="show = !show">change show</button>
+    <!-- 控制流 -->
     <h2>v-if v-esle-if v-else</h2>
     <div v-if="number === 1">hello vue {{ number }}</div>
     <div v-else-if="number === 2">hello world {{ number }}</div>
@@ -16,11 +20,15 @@
     <h2>v-for v-bind</h2>
     <div v-for="num in [1, 2, 3]" v-bind:key="num">hello vue {{ num }}</div>
     <h2>v-on</h2>
+    <!-- 指令 -->
     <button v-on:click="number = number + 1">number++</button>
+    <!-- 数据绑定 -->
     <h2>v-model</h2>
     <input v-model="message" />
+    <!-- 绕过双括号编译 -->
     <h2>v-pre</h2>
     <div v-pre>{{ this will not be compiled }}</div>
+    <!-- 变量只执行一次，不重新渲染 -->
     <h2>v-once</h2>
     <div v-once>
       {{ number }}
